@@ -8,18 +8,11 @@ namespace Aufgabe1
 {
     public static class ExtensionMethods
     {
-        public static IEnumerable<T> FilterSame<T>(this IEnumerable<T> firstobjects, IEnumerable<T> secondObjects)
+        public static IEnumerable<T> FilterSame<T>(this IEnumerable<T> self, IEnumerable<T> filter) where T : IEquatable<T>
         {
-            for (int i = 0; i < firstobjects.MyCount(); i++)
-            {
-                for (int j = 0; j < secondObjects.MyCount(); j++)
-                {
-                    if(firstobjects.MyElementAt(i).Equals(secondObjects.MyElementAt(j)))
-                    {
-                        yield return firstobjects.MyElementAt(i);
-                    }
-                }
-            }
+            foreach (var item in self)
+                foreach (var result in filter.Where(filterItem => item.Equals(filterItem)))
+                    yield return result;
         }
 
         public static T MyElementAt<T>(this IEnumerable<T> objects, int index)
