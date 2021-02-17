@@ -14,7 +14,7 @@ Zeigen Sie, wie Sie in WPF ein Rechteck von Links oben nach Rechts unten bewegen
 ## Aufgabe 5
 Prozesse: 
 Iterieren Sie über alle laufenden Prozesse und ermitteln Sie, welche Module jeder Prozess geladen hat. Stellen Sie fest, ob das Modul eine .Net-Assembly ist oder nicht.
-## Aufgabe 6
+## Aufgabe 6 (erledigt)
 WPF:
 Implementieren Sie einen Slider, dessen Wert(0-360) den Rotationswinkel einer Linie (wie einen Sekundenzeiger einer Uhr) modifiziert
 ## Aufgabe 7
