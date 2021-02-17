@@ -23,3 +23,8 @@ Extension Methode "Apply<T,V>", die eine Funktion auf alle Objekte einer Sammlun
 ## Aufgabe 8
 Assembly:
 Erzeugen Sie ein eigenes Attribut mit einem Property. Deklarieren Sie eine Klasse die mit diesem Attribut versehen ist und reflektieren Sie anschließend über jene DLL, in der sich diese Klasse befindet und geben Sie das Property dieses Attributes aus.
+  
+## WPF Uhr aus dem Beispielvideo (erledigt)
+## WPF Uhr mit Animationen aus dem Beispielvideo
+## WPF Video Michi
+## WPF Aufgabe Michi am Ende des ersten Videos
