@@ -27,4 +27,4 @@ Erzeugen Sie ein eigenes Attribut mit einem Property. Deklarieren Sie eine Klass
 ## WPF Uhr aus dem Beispielvideo (erledigt)
 ## WPF Uhr mit Animationen aus dem Beispielvideo
 ## WPF Video Michi
-## WPF Aufgabe Michi am Ende des ersten Videos
+## WPF Aufgabe Michi am Ende des ersten Videos - Persone Manager (erledigt)
