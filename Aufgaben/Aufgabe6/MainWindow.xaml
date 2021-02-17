@@ -1,0 +1,26 @@
+﻿<Window x:Class="Aufgabe6.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Aufgabe6"
+        mc:Ignorable="d"
+        Title="MainWindow" SizeToContent="WidthAndHeight">
+    <Grid>
+        <Grid.DataContext>
+            <local:Counter/>
+        </Grid.DataContext>
+        <StackPanel>
+            <Canvas Width="250" Height="250">
+                <Ellipse Width="250" Height="250" StrokeThickness="1" Stroke="Blue"></Ellipse>
+                <Line X1="125" X2="125" Y1="125" Y2="0" Stroke="Black" StrokeThickness="1">
+                    <Line.RenderTransform>
+                        <RotateTransform CenterX="125" CenterY="125" Angle="{Binding Angle}"></RotateTransform>
+                    </Line.RenderTransform>
+                </Line>
+            </Canvas>
+            <Slider Minimum="0" Maximum="360" Value="{Binding Angle}"/>
+        </StackPanel>
+       
+    </Grid>
+</Window>

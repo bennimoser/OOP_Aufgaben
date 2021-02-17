@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aufgabe1", "Aufgabe1\Aufgab
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aufgabe3", "Aufgabe3\Aufgabe3.csproj", "{0CB7C6B1-AD4E-43F6-A4BC-27E0CDA4EA9D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFClock", "WPFTestApp\WPFClock.csproj", "{3EA125F1-21F1-4244-BBE3-91564E0547D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aufgabe6", "Aufgabe6\Aufgabe6.csproj", "{69B2D502-F857-4286-B6E5-6638A94065C2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{0CB7C6B1-AD4E-43F6-A4BC-27E0CDA4EA9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0CB7C6B1-AD4E-43F6-A4BC-27E0CDA4EA9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0CB7C6B1-AD4E-43F6-A4BC-27E0CDA4EA9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EA125F1-21F1-4244-BBE3-91564E0547D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EA125F1-21F1-4244-BBE3-91564E0547D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EA125F1-21F1-4244-BBE3-91564E0547D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EA125F1-21F1-4244-BBE3-91564E0547D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69B2D502-F857-4286-B6E5-6638A94065C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69B2D502-F857-4286-B6E5-6638A94065C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69B2D502-F857-4286-B6E5-6638A94065C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69B2D502-F857-4286-B6E5-6638A94065C2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
