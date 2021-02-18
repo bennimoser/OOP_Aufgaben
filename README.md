@@ -8,13 +8,13 @@ Erzeugen Sie programmatisch eine DLL, die eine Methode beinhaltet, die zwei Inte
 ## Aufgabe 3 (erledigt)
 Netzwerkprogrammierung:
 Ermitteln Sie, welche Rechner im Subnetz 255.255.255.0 per TCP-Verbindung erreichbar sind und geben Sie deren IP-Addressen aus.
-## Aufgabe 4
+## Aufgabe 4 (erledigt)
 WPF:
 Zeigen Sie, wie Sie in WPF ein Rechteck von Links oben nach Rechts unten bewegen und gleichzeitig dessen Farbe ändern können.
 ## Aufgabe 5
 Prozesse: 
 Iterieren Sie über alle laufenden Prozesse und ermitteln Sie, welche Module jeder Prozess geladen hat. Stellen Sie fest, ob das Modul eine .Net-Assembly ist oder nicht.
-## Aufgabe 6
+## Aufgabe 6 (erledigt)
 WPF:
 Implementieren Sie einen Slider, dessen Wert(0-360) den Rotationswinkel einer Linie (wie einen Sekundenzeiger einer Uhr) modifiziert
 ## Aufgabe 7
@@ -23,3 +23,6 @@ Extension Methode "Apply<T,V>", die eine Funktion auf alle Objekte einer Sammlun
 ## Aufgabe 8
 Assembly:
 Erzeugen Sie ein eigenes Attribut mit einem Property. Deklarieren Sie eine Klasse die mit diesem Attribut versehen ist und reflektieren Sie anschließend über jene DLL, in der sich diese Klasse befindet und geben Sie das Property dieses Attributes aus.
+  
+## WPF Uhr mit Animationen aus dem Beispielvideo (erledigt)
+## Personenmanager (erledigt)

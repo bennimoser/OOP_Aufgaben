@@ -1,0 +1,171 @@
+﻿<Window x:Class="PersonManager.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:PersonManager.ViewModel"
+        mc:Ignorable="d"
+        Title="WPF People Manager" Height="450" Width="800"
+        Icon="../View/Images/Icon.png">
+
+    <Window.DataContext>
+        <vm:PersonManagementVM/>
+    </Window.DataContext>
+    <Window.Background>
+        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+            <GradientStop Color="LightGray" Offset="0"/>
+            <GradientStop Color="LightGoldenrodYellow" Offset="0.5"/>
+            <GradientStop Color="LightGray" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
+
+    <TabControl Margin="25" MaxWidth="850">
+        <TabItem>
+            <TabItem.Header>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="../View/Images/person.png" Width="20" VerticalAlignment="Center"/>
+                    <TextBlock Text="Personal Data" VerticalAlignment="Center"/>
+                </StackPanel>
+            </TabItem.Header>
+            <StackPanel>
+                <StackPanel.Background>
+                    <ImageBrush ImageSource="../View/Images/person.png" Stretch="Uniform"
+                                AlignmentX="Center" AlignmentY="Center" Opacity="0.05"/>
+                </StackPanel.Background>
+                <!--Widget 1-->
+                <GroupBox BorderThickness="0.9" BorderBrush="Black"
+                        Margin="15" Padding="15" Background="LightGray">
+                    <GroupBox.Header>
+                        <Border BorderThickness="0.75" BorderBrush="Black" Background="White"
+                                CornerRadius="9" Padding="7,0,7,0">
+                            <TextBlock Text="Identification"/>
+                        </Border>
+                    </GroupBox.Header>
+                    <Grid >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="70"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition Height="7"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="First name:" Grid.Column="0" Grid.Row="0"/>
+                        <TextBox Grid.Column="1" Grid.Row="0" Text="{Binding Person.FirstName}"/>
+                        <TextBlock Text="Last name:" Grid.Column="0" Grid.Row="3"/>
+                        <TextBox Grid.Column="1" Grid.Row="3" Text="{Binding Person.LastName}"/>
+                    </Grid>
+                </GroupBox>
+                <!--Widget 2-->
+                <GroupBox BorderThickness="0.9" BorderBrush="Black"
+                        Margin="15" Padding="15" Background="LightGray">
+                    <GroupBox.Header>
+                        <Border BorderThickness="0.75" BorderBrush="Black" Background="White"
+                                CornerRadius="9" Padding="7,0,7,0">
+                            <TextBlock Text="Other data"/>
+                        </Border>
+                    </GroupBox.Header>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="70"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition Height="7"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <!--Birthday selection-->
+                        <TextBlock Text="Birthday:" Grid.Column="0" Grid.Row="0"/>
+                        <Grid Grid.Column="2" Grid.Row="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="20"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBox x:Name="txtBoxBirthday" IsReadOnly="True"
+                                     Text="{Binding Person.Birthday, StringFormat=d}"
+                                     Grid.Column="0">
+                            </TextBox>
+                            <ToggleButton x:Name="btnCal" Grid.Column="1">
+                                <Image Source="../View/Images/calendar.png"/>
+                            </ToggleButton>
+                            <Popup IsOpen="{Binding ElementName=btnCal, Path=IsChecked}" StaysOpen="False"
+                                   PlacementTarget="{Binding ElementName=btnCal}" Placement="Left">
+                                <Calendar x:Name="cal" SelectedDate="{Binding Person.Birthday}"/>
+                            </Popup>
+                        </Grid>
+                        <!--Height selection-->
+                        <TextBlock Text="Height/cm:" Grid.Column="0" Grid.Row="3"/>
+                        <Grid Grid.Column="1" Grid.Row="3">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="45"/>
+                            </Grid.ColumnDefinitions>
+                            <Slider Grid.Column="0" Minimum="60" Maximum="230" TickFrequency="1" Value="{Binding Person.Height}">
+                            </Slider>
+                            <TextBlock Grid.Column="1" Text="{Binding Person.Height, StringFormat={}{0} cm}"
+                                       HorizontalAlignment="Right">
+                            </TextBlock>
+                        </Grid>
+                    </Grid>
+                </GroupBox>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="15">
+                    <Button Content="Save" Width="60" Padding="4" Command="{Binding SaveCommand}"/>
+                    <Separator Width="15" Background="Transparent"/>
+                    <Button x:Name="btnLoad" Content="Load"  Width="60" Padding="4" 
+                            Command="{Binding Path=LoadCommand, RelativeSource={RelativeSource AncestorType={x:Type Window}}}">
+                    </Button>
+                </StackPanel>
+            </StackPanel>
+        </TabItem>
+        <TabItem >
+            <TabItem.Header>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="../View/Images/gear.png" Width="20" VerticalAlignment="Center"/>
+                    <TextBlock Text="Settings" VerticalAlignment="Center"/>
+                </StackPanel>
+            </TabItem.Header>
+            <StackPanel>
+                <StackPanel.Background>
+                    <ImageBrush ImageSource="../View/Images/gear.png" Stretch="Uniform"
+                                AlignmentX="Center" AlignmentY="Center" Opacity="0.05"/>
+                </StackPanel.Background>
+                <GroupBox BorderThickness="0.9" BorderBrush="Black"
+                        Margin="15" Padding="15" Background="LightGray">
+                    <GroupBox.Header>
+                        <Border BorderThickness="0.75" BorderBrush="Black" Background="White"
+                                CornerRadius="9" Padding="7,0,7,0">
+                            <TextBlock Text="Save/load settings"/>
+                        </Border>
+                    </GroupBox.Header>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="70"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition Height="9"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="File path:" Grid.Column="0" Grid.Row="0"/>
+                        <DockPanel Grid.Column="1" Grid.Row="0" LastChildFill="True">
+                            <Button Content="Browse..." Width="60" DockPanel.Dock="Right" Click="OpenFileDia"/>
+                            <Separator Background="Transparent" Width="10" DockPanel.Dock="Right"/>
+                            <TextBox HorizontalAlignment="Stretch" BorderBrush="LightBlue" Text="{Binding SettingArgs.FilePath}"/>
+                        </DockPanel>
+                        <TextBlock Grid.Column="0" Grid.Row="3" Text="File format:"/>
+                        <StackPanel Grid.Column="1" Grid.Row="3">
+                            <RadioButton Content="XML" 
+                                         Command="{Binding SetFormatterCommand}" CommandParameter="XML"/>
+                            <Separator Height="7" Background="Transparent"/>
+                            <RadioButton Content=".NET Serialization" IsChecked="True" 
+                                         Command="{Binding SetFormatterCommand}" CommandParameter=".NET"/>
+                        </StackPanel>
+                    </Grid>
+                </GroupBox>
+            </StackPanel>
+        </TabItem>
+    </TabControl>
+</Window>
