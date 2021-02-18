@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WPFTestApp
+namespace Aufgabe4
 {
     /// <summary>
     /// Interaktionslogik für MainWindow.xaml

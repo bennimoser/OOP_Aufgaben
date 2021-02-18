@@ -16,13 +16,23 @@ using System.Windows.Shapes;
 namespace WPFTestApp
 {
     /// <summary>
-    /// Interaktionslogik für MainWindow.xaml
+    /// Interaktionslogik für MyClock.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MyClock : UserControl
     {
-        public MainWindow()
+        public MyClock()
         {
             InitializeComponent();
+            var angle = Enumerable.Range(0, 6).Select(p => p * 30);
+            Control.ItemsSource = angle;
+        }
+
+        public Color MyColor
+        {
+            set
+            {
+                brush.Color = value;
+            }
         }
     }
 }

@@ -7,19 +7,16 @@
         mc:Ignorable="d"
         Title="MainWindow" SizeToContent="WidthAndHeight">
     <Grid>
-        <Grid.DataContext>
-            <local:Counter/>
-        </Grid.DataContext>
         <StackPanel>
             <Canvas Width="250" Height="250">
                 <Ellipse Width="250" Height="250" StrokeThickness="1" Stroke="Blue"></Ellipse>
                 <Line X1="125" X2="125" Y1="125" Y2="0" Stroke="Black" StrokeThickness="1">
                     <Line.RenderTransform>
-                        <RotateTransform CenterX="125" CenterY="125" Angle="{Binding Angle}"></RotateTransform>
+                        <RotateTransform CenterX="125" CenterY="125" Angle="{Binding ElementName=slider, Path=Value}"></RotateTransform>
                     </Line.RenderTransform>
                 </Line>
             </Canvas>
-            <Slider Minimum="0" Maximum="360" Value="{Binding Angle}"/>
+            <Slider Minimum="0" Maximum="360" x:Name="slider"/>
         </StackPanel>
        
     </Grid>
