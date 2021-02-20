@@ -26,3 +26,4 @@ Erzeugen Sie ein eigenes Attribut mit einem Property. Deklarieren Sie eine Klass
   
 ## WPF Uhr mit Animationen aus dem Beispielvideo (erledigt)
 ## Personenmanager (erledigt)
+## Linq Übung
