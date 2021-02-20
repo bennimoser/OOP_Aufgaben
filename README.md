@@ -11,13 +11,13 @@ Ermitteln Sie, welche Rechner im Subnetz 255.255.255.0 per TCP-Verbindung erreic
 ## Aufgabe 4 (erledigt)
 WPF:
 Zeigen Sie, wie Sie in WPF ein Rechteck von Links oben nach Rechts unten bewegen und gleichzeitig dessen Farbe ändern können.
-## Aufgabe 5
+## Aufgabe 5 (erledigt)
 Prozesse: 
 Iterieren Sie über alle laufenden Prozesse und ermitteln Sie, welche Module jeder Prozess geladen hat. Stellen Sie fest, ob das Modul eine .Net-Assembly ist oder nicht.
 ## Aufgabe 6 (erledigt)
 WPF:
 Implementieren Sie einen Slider, dessen Wert(0-360) den Rotationswinkel einer Linie (wie einen Sekundenzeiger einer Uhr) modifiziert
-## Aufgabe 7
+## Aufgabe 7 (angefangen)
 LINQ:
 Extension Methode "Apply<T,V>", die eine Funktion auf alle Objekte einer Sammlung von Objekten aufruft und deren Ergebnisse sortiert.
 ## Aufgabe 8
