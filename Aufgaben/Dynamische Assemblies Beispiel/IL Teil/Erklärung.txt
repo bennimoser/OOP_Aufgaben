@@ -1,0 +1,6 @@
+﻿Die Programmzeilen die mit OpCodes und Emit geschrieben werden basieren auf dem main.il.
+Zum Ausführen des OpCodes(main.il):
+* x64 Prompt von Visual Studio öffnen
+* Zur Datei navigieren
+* In die CMD "ilasm main.il" eingeben zum kompilieren des Programs(Es entsteht main.exe daraus!)
+* "peverify main.exe", um die entstandene Assembly zu überprüfen
