@@ -2,7 +2,7 @@
 
 ## Aufgabe 1 (erledigt)
 LINQ: Extension Methode "FilterSame<T>", die aus zwei Ansammlungen von Objekten jene Objekte herausfiltert, die in beiden enthalten sind.
-## Aufgabe 2
+## Aufgabe 2 (erledigt)
 Assembly:
 Erzeugen Sie programmatisch eine DLL, die eine Methode beinhaltet, die zwei Integer-Werte addiert und das Ergebnis retourniert.
 ## Aufgabe 3 (erledigt)
