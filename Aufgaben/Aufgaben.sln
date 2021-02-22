@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aufgabe8", "Aufgabe8\Aufgab
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aufgabe8_Library", "Aufgabe8_Library\Aufgabe8_Library.csproj", "{975CB8D0-705B-408C-B029-E3A134949225}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PingWPF_Übung", "PingWPF_Übung\PingWPF_Übung.csproj", "{8AA3BC53-45F7-4736-865F-6E17AC3800C4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -93,6 +95,10 @@ Global
 		{975CB8D0-705B-408C-B029-E3A134949225}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{975CB8D0-705B-408C-B029-E3A134949225}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{975CB8D0-705B-408C-B029-E3A134949225}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AA3BC53-45F7-4736-865F-6E17AC3800C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AA3BC53-45F7-4736-865F-6E17AC3800C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AA3BC53-45F7-4736-865F-6E17AC3800C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AA3BC53-45F7-4736-865F-6E17AC3800C4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

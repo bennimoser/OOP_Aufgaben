@@ -13,7 +13,7 @@ namespace Aufgabe3
         public static void Main(string[] args)
         {
             var ipaddress = GetIpAddress();
-            var availableIps = PingSubnet(ipaddress);
+            PingSubnet(ipaddress);
         }
 
         public static IPAddress GetIpAddress()
@@ -31,24 +31,21 @@ namespace Aufgabe3
             return address;
         }
 
-        public static List<IPAddress> PingSubnet(IPAddress entryAddress)
+        public static void PingSubnet(IPAddress entryAddress)
         {
-            List<IPAddress> availableAddresses = new List<IPAddress>();
             List<string> numbers = entryAddress.ToString().Split('.').ToList();
             for (int i = 1; i < 255; i++)
             {
                 numbers[numbers.Count - 1] = i.ToString();
                 var addressString = string.Join(".", numbers);
                 var adress = IPAddress.Parse(addressString);
-                Console.WriteLine(adress);
                 var ping = new Ping();
                 PingReply result = ping.Send(adress);
                 if(result.Status == IPStatus.Success)
                 {
-                    availableAddresses.Add(adress);
+                    Console.WriteLine(adress);
                 }
             }
-            return availableAddresses;
         }
     }
 }
