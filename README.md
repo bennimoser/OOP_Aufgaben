@@ -20,7 +20,7 @@ Implementieren Sie einen Slider, dessen Wert(0-360) den Rotationswinkel einer Li
 ## Aufgabe 7 (angefangen)
 LINQ:
 Extension Methode "Apply<T,V>", die eine Funktion auf alle Objekte einer Sammlung von Objekten aufruft und deren Ergebnisse sortiert.
-## Aufgabe 8
+## Aufgabe 8 (erledigt)
 Assembly:
 Erzeugen Sie ein eigenes Attribut mit einem Property. Deklarieren Sie eine Klasse die mit diesem Attribut versehen ist und reflektieren Sie anschließend über jene DLL, in der sich diese Klasse befindet und geben Sie das Property dieses Attributes aus.
   
