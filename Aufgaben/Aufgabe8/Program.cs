@@ -14,12 +14,11 @@ namespace Aufgabe8
         {
             Assembly asm = Assembly.LoadFrom("Aufgabe8_Library.dll");
             Type type = asm.GetType("Aufgabe8_Library.Person");
-            var attributes = type.GetCustomAttributes();
-            foreach(var attribute in attributes)
+            var attributes = type.GetCustomAttributes(true).Where(a => a is DescriptionAttribute);
+            foreach(DescriptionAttribute attribute in attributes)
             {
                 //Wenn gemeint ist, der Inhalt des Property
-                var att = attribute as DescriptionAttribute;
-                Console.WriteLine(att.Description);
+                Console.WriteLine(attribute.Description);
 
                 //Wenn gemeint ist, nur die PropertyInfo ausgeben
                 Type atttype = attribute.GetType();
@@ -29,6 +28,8 @@ namespace Aufgabe8
                     Console.WriteLine(property);
                 }
             }
+
+            Console.ReadLine();
         }
     }
 }
