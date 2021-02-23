@@ -23,7 +23,15 @@ Extension Methode "Apply<T,V>", die eine Funktion auf alle Objekte einer Sammlun
 ## Aufgabe 8 (erledigt)
 Assembly:
 Erzeugen Sie ein eigenes Attribut mit einem Property. Deklarieren Sie eine Klasse die mit diesem Attribut versehen ist und reflektieren Sie anschließend über jene DLL, in der sich diese Klasse befindet und geben Sie das Property dieses Attributes aus.
-  
+## Aufgabe 9
+LINQ:
+Extension Methode Mix<T>, die eine beliebige Anzahl an Objektansammlungen zu einer Sammlung vereint, jedoch doppelte Elemente entfernt.
+## Aufgabe 10
+Assembly:
+Lade die Assembly System.dll und gib alle Typen aus, die das Interface IList implementieren.
+## Aufgabe 11
+Prozesse:
+Kapseln Sie einen Konsolenprozess über eine grafisches User-Interface.
 ## WPF Uhr mit Animationen aus dem Beispielvideo (erledigt)
 ## Personenmanager (erledigt)
 ## Linq Übung (5-8 missing)
