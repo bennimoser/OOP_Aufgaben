@@ -29,7 +29,7 @@ Extension Methode "Mix<T>", die eine beliebige Anzahl an Objektansammlungen zu e
 ## Aufgabe 10 (erledigt)
 Assembly:
 Lade die Assembly System.dll und gib alle Typen aus, die das Interface IList implementieren.
-## Aufgabe 11
+## Aufgabe 11 (erledigt)
 Prozesse:
 Kapseln Sie einen Konsolenprozess über eine grafisches User-Interface.
 ## WPF Uhr mit Animationen aus dem Beispielvideo (erledigt)
