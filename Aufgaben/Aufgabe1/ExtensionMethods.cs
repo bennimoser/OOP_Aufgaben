@@ -14,25 +14,5 @@ namespace Aufgabe1
                 foreach (var result in filter.Where(filterItem => item.Equals(filterItem)))
                     yield return result;
         }
-
-        public static T MyElementAt<T>(this IEnumerable<T> objects, int index)
-        {
-            IEnumerator<T> enumerator = objects.GetEnumerator();
-            for (int i = 0; i <= index; i++)
-            {
-                enumerator.MoveNext();
-            }
-            return enumerator.Current;
-        }
-
-        public static int MyCount<T>(this IEnumerable<T> objects)
-        {
-            int counter = 0;
-            foreach(var element in objects)
-            {
-                counter++;
-            }
-            return counter;
-        }
     }
 }

@@ -14,10 +14,17 @@ namespace Aufgabe9
             list.AddRange(elements);
             foreach(var collection in objects)
             {
-                list.AddRange(collection);
+                foreach(var item in collection)
+                {
+                    if(!list.Contains(item))
+                    {
+                        list.Add(item);
+                    }
+                }
+
             }
 
-            return list.Distinct();
+            return list;
         }
     }
 }
