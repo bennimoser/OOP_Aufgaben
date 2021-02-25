@@ -8,26 +8,37 @@ using System.Threading.Tasks;
 
 namespace Aufgabe8
 {
-    class Program
+    [Description("iwas lulululu")]
+    public class Program
     {
         public static void Main(string[] args)
         {
-            Assembly asm = Assembly.LoadFrom("Aufgabe8_Library.dll");
-            Type type = asm.GetType("Aufgabe8_Library.Person");
-            var attributes = type.GetCustomAttributes(true).Where(a => a is DescriptionAttribute);
+            // Early Binding
+            Type type = typeof(Person);
+            IEnumerable<Attribute> attributes = type.GetCustomAttributes();
             foreach(DescriptionAttribute attribute in attributes)
             {
                 //Wenn gemeint ist, der Inhalt des Property
                 Console.WriteLine(attribute.Description);
-
-                //Wenn gemeint ist, nur die PropertyInfo ausgeben
-                Type atttype = attribute.GetType();
-                var properties = atttype.GetProperties();
-                foreach (var property in properties)
-                {
-                    Console.WriteLine(property);
-                }
             }
+
+            // Late Binding
+            Assembly asm = Assembly.LoadFrom("Aufgabe8_Library.dll");
+            type = asm.GetType("Aufgabe8_Library.Person");
+            attributes = type.GetCustomAttributes();
+            foreach(var attribute in attributes)
+            {
+                var atttype = attribute.GetType();
+                if(atttype.Name == "DescriptionAttribute")
+                {
+                    var properties = atttype.GetProperties();
+                    foreach (var property in properties)
+                    {
+                        Console.WriteLine(property);
+                    }
+                }
+            }         
+            
 
             Console.ReadLine();
         }

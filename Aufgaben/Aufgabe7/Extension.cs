@@ -8,11 +8,9 @@ namespace Aufgabe7
 {
     public static class Extension
     {
-        public static IEnumerable<T> Apply<T>(this IEnumerable<T> objects, Func<T, T> function)
+        public static IEnumerable<V> Apply<T,V>(this IEnumerable<T> objects, Func<T,V> function)
         {
-            foreach(var item in objects){
-                yield return function.Invoke(item);
-            }
+             return objects.Select(function).ToList().OrderBy(x => x).ToList();
         }
     }
 }
