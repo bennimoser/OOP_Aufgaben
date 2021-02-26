@@ -41,6 +41,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aufgabe11", "Aufgabe11\Aufg
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetworkingTestProject", "NetworkingTestProject\NetworkingTestProject.csproj", "{0F71BC9C-B7D8-42EF-8E65-1B2961FF766A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPLExample", "TPLExample\TPLExample.csproj", "{C7BA09E1-36AD-4AF9-8D1B-61CB46B9922A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -123,6 +125,10 @@ Global
 		{0F71BC9C-B7D8-42EF-8E65-1B2961FF766A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F71BC9C-B7D8-42EF-8E65-1B2961FF766A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0F71BC9C-B7D8-42EF-8E65-1B2961FF766A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7BA09E1-36AD-4AF9-8D1B-61CB46B9922A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7BA09E1-36AD-4AF9-8D1B-61CB46B9922A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7BA09E1-36AD-4AF9-8D1B-61CB46B9922A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7BA09E1-36AD-4AF9-8D1B-61CB46B9922A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
