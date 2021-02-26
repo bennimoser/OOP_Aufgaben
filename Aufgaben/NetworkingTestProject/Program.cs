@@ -101,7 +101,23 @@ namespace NetworkingTestProject
 
             #endregion
 
-                Console.ReadLine();
+            #region NetworkInterface
+            if (NetworkInterface.GetIsNetworkAvailable())
+            {
+                NetworkInterface[] networkinterfaces = NetworkInterface.GetAllNetworkInterfaces();
+                foreach(NetworkInterface networkinterface in networkinterfaces)
+                {
+                    Console.WriteLine("---------------------");
+                    Console.WriteLine("Id: " + networkinterface.Id);
+                    Console.WriteLine("Name: " + networkinterface.Name);
+                    Console.WriteLine("Beschreibung: " + networkinterface.Description);
+                    Console.WriteLine("Geschwindigkeit: " + networkinterface.Speed + "bit/s");
+                    Console.WriteLine("Typ: " + networkinterface.NetworkInterfaceType);
+                }
+            }
+            #endregion
+
+            Console.ReadLine();
         }
     }
 }
