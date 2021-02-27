@@ -10,9 +10,9 @@
         <local:MainViewModel/>
     </Window.DataContext>
     <StackPanel>
-        <Button Content="Start Ping Machine" Command="{Binding startProcessCommand}"></Button>
+        <Button Content="Start Ping Machine" Command="{Binding Path=startProcessCommand}"></Button>
         <TextBlock Text="Erfolgreiche IP-Adressen"></TextBlock>
-        <ListView ItemsSource="{Binding SucessfulList}" Height="400">
+        <ListView ItemsSource="{Binding Path=SucessfulList}" Height="400">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="IP-Address">

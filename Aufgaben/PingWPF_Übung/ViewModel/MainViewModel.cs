@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -32,7 +33,7 @@ namespace PingWPF_Übung.ViewModel
                 if(value != null)
                 {
                     this.sucessfulList = value;
-                    this.Notify(nameof(SucessfulList));
+                    //this.Notify();
                 }
             }
         }
@@ -72,9 +73,9 @@ namespace PingWPF_Übung.ViewModel
             });
         }
 
-        private void Notify(string propertyname)
-        {
-            this.PropertyChanged.Invoke(this, new PropertyChangedEventArgs(propertyname));
-        }
+        //private void Notify([CallerMemberName] string propertyname = null)
+        //{
+        //    this.PropertyChanged.Invoke(this, new PropertyChangedEventArgs(propertyname));
+        //}
     }
 }
