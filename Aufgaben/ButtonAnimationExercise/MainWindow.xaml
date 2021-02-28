@@ -1,0 +1,45 @@
+﻿<Window x:Class="ButtonAnimationExercise.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ButtonAnimationExercise"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <StackPanel>
+        <Canvas Height="250" Width="800">
+            <Rectangle Width="50" Height="50">
+                <Rectangle.Fill>
+                    <SolidColorBrush x:Name="brush" />
+                </Rectangle.Fill>
+                <Rectangle.RenderTransform>
+                    <TranslateTransform x:Name="transform" />
+                </Rectangle.RenderTransform>
+            </Rectangle>
+        </Canvas>
+        <Button Content="Start Animation" x:Name="startbutton" />
+        <Button Content="Stop Animation" x:Name="stopbutton"/>
+        <Button Content="Resume Animation" x:Name="resumebutton"/>
+        <Button Content="Pause Animation" x:Name="pausebutton" />
+        <StackPanel.Triggers>
+            <EventTrigger RoutedEvent="Button.Click" SourceName="startbutton">
+                <BeginStoryboard Name="beginStoryboard">
+                        <Storyboard>
+                            <DoubleAnimation From="0" To="750" Duration="0:0:5" AutoReverse="True" RepeatBehavior="Forever" Storyboard.TargetName="transform" Storyboard.TargetProperty="X" />
+                            <DoubleAnimation From="0" To="200" Duration="0:0:5" AutoReverse="True" RepeatBehavior="Forever" Storyboard.TargetName="transform" Storyboard.TargetProperty="Y" />
+                            <ColorAnimation Duration="0:0:5" From="Yellow" To="Violet" AutoReverse="True" RepeatBehavior="Forever" Storyboard.TargetName="brush" Storyboard.TargetProperty="Color" />
+                        </Storyboard>
+                    </BeginStoryboard>
+            </EventTrigger>
+            <EventTrigger RoutedEvent="Button.Click" SourceName="stopbutton">
+                <StopStoryboard BeginStoryboardName="beginStoryboard" />
+            </EventTrigger>
+            <EventTrigger RoutedEvent="Button.Click" SourceName="resumebutton">
+                <ResumeStoryboard BeginStoryboardName="beginStoryboard"/>
+            </EventTrigger>
+            <EventTrigger RoutedEvent="Button.Click" SourceName="pausebutton">
+                <PauseStoryboard BeginStoryboardName="beginStoryboard" />
+            </EventTrigger>
+        </StackPanel.Triggers>
+    </StackPanel>
+</Window>

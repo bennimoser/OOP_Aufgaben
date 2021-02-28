@@ -45,6 +45,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPLExample", "TPLExample\TP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidationWPFExample", "ValidationWPFExample\ValidationWPFExample.csproj", "{FB5A117B-AD79-4241-90D7-03DF96BA5868}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcessExercise", "ProcessExercise\ProcessExercise.csproj", "{E9AE20CF-3317-4D68-AE6D-8A7B38DF172A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ButtonAnimationExercise", "ButtonAnimationExercise\ButtonAnimationExercise.csproj", "{35525B3B-6FBA-4155-816C-959686BEB5C7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -135,6 +139,14 @@ Global
 		{FB5A117B-AD79-4241-90D7-03DF96BA5868}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB5A117B-AD79-4241-90D7-03DF96BA5868}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB5A117B-AD79-4241-90D7-03DF96BA5868}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9AE20CF-3317-4D68-AE6D-8A7B38DF172A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9AE20CF-3317-4D68-AE6D-8A7B38DF172A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9AE20CF-3317-4D68-AE6D-8A7B38DF172A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9AE20CF-3317-4D68-AE6D-8A7B38DF172A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35525B3B-6FBA-4155-816C-959686BEB5C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35525B3B-6FBA-4155-816C-959686BEB5C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35525B3B-6FBA-4155-816C-959686BEB5C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35525B3B-6FBA-4155-816C-959686BEB5C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

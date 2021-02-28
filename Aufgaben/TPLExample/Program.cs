@@ -43,11 +43,18 @@ namespace TPLExample
             Console.WriteLine("-----------------------------------------");
             Console.WriteLine("Parallel");
 
-            Parallel.For(0, 10, i =>
-              {
-                  Console.WriteLine("Iteration " + i);
-                  Thread.Sleep(1000);
-              });
+            int lowerBoundary = 0;
+            int upperBoundary = 10;
+
+            DateTime startTime = DateTime.Now;
+            CalculateSingle(lowerBoundary, upperBoundary);
+            Console.WriteLine(DateTime.Now.Subtract(startTime).TotalMilliseconds);
+
+
+            startTime = DateTime.Now;
+            CalculateParallel(lowerBoundary, upperBoundary);
+            Console.WriteLine(DateTime.Now.Subtract(startTime).TotalMilliseconds);
+
 
             Console.WriteLine();
             Console.WriteLine("That was it with Parallel");
@@ -84,6 +91,24 @@ namespace TPLExample
         {
             Console.WriteLine("Method was called on Thread Nr. " + Thread.CurrentThread.ManagedThreadId);
             Console.WriteLine((string)state + DateTime.Now.ToLongTimeString());
+        }
+
+        public static void CalculateSingle(int lowerBoundary, int upperBoundary)
+        {
+            for (int i = lowerBoundary; i < upperBoundary; i++)
+            {
+                Console.Write(i + " ");
+                Thread.Sleep(1000);
+            }
+        }
+
+        public static void CalculateParallel(int lowerBoundary, int upperBoundary)
+        {
+            Parallel.For(lowerBoundary, upperBoundary, i =>
+            {
+                Console.Write(i + " ");
+                Thread.Sleep(1000);
+            });
         }
     }
 
