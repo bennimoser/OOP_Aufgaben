@@ -26,13 +26,12 @@ namespace Aufgabe8
             Assembly asm = Assembly.LoadFrom("Aufgabe8_Library.dll");
             type = asm.GetType("Aufgabe8_Library.Person");
             attributes = type.GetCustomAttributes();
-            foreach(var attribute in attributes)
+            foreach(dynamic attribute in attributes)
             {
                 var atttype = attribute.GetType();                
                 if(atttype.Name == "DescriptionAttribute")
                 {
-                    dynamic iwas = type.GetCustomAttribute(atttype);
-                    dynamic info = iwas.Description;
+                    dynamic info = attribute.Description;
                     Console.WriteLine(info);
                 }
             }         
