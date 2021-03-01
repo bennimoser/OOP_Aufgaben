@@ -28,14 +28,12 @@ namespace Aufgabe8
             attributes = type.GetCustomAttributes();
             foreach(var attribute in attributes)
             {
-                var atttype = attribute.GetType();
+                var atttype = attribute.GetType();                
                 if(atttype.Name == "DescriptionAttribute")
                 {
-                    var properties = atttype.GetProperties();
-                    foreach (var property in properties)
-                    {
-                        Console.WriteLine(property);
-                    }
+                    dynamic iwas = type.GetCustomAttribute(atttype);
+                    dynamic info = iwas.Description;
+                    Console.WriteLine(info);
                 }
             }         
             

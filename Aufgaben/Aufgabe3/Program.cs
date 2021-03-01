@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Net.NetworkInformation;
@@ -45,6 +46,22 @@ namespace Aufgabe3
                 {
                     Console.WriteLine(adress);
                 }
+
+                //Lösung mit Prozessen 
+
+                //Process process = new Process();
+                //process.StartInfo.FileName = "ping.exe";
+                //process.StartInfo.Arguments = "-4 " + adress.ToString();
+                //process.StartInfo.RedirectStandardOutput = true;
+                //process.StartInfo.UseShellExecute = false;
+
+                //process.Start();
+                //process.WaitForExit();
+                //string endstring = process.StandardOutput.ReadToEnd();
+                //if (!endstring.Contains("Zielhost nicht erreichbar"))
+                //{
+                //    Console.WriteLine("Ping Process : " + adress);
+                //}
             }
         }
     }
