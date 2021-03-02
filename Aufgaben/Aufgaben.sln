@@ -49,6 +49,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcessExercise", "ProcessE
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ButtonAnimationExercise", "ButtonAnimationExercise\ButtonAnimationExercise.csproj", "{35525B3B-6FBA-4155-816C-959686BEB5C7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerialiseSystemIOExercise", "SerialiseSystemIOExercise\SerialiseSystemIOExercise.csproj", "{F001D337-715E-414F-B19C-047FB7656004}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SystemIOExercise", "SystemIOExercise\SystemIOExercise.csproj", "{022DE28B-06C9-46BD-9A63-95E296C0DE21}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -147,6 +151,14 @@ Global
 		{35525B3B-6FBA-4155-816C-959686BEB5C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{35525B3B-6FBA-4155-816C-959686BEB5C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{35525B3B-6FBA-4155-816C-959686BEB5C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F001D337-715E-414F-B19C-047FB7656004}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F001D337-715E-414F-B19C-047FB7656004}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F001D337-715E-414F-B19C-047FB7656004}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F001D337-715E-414F-B19C-047FB7656004}.Release|Any CPU.Build.0 = Release|Any CPU
+		{022DE28B-06C9-46BD-9A63-95E296C0DE21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{022DE28B-06C9-46BD-9A63-95E296C0DE21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{022DE28B-06C9-46BD-9A63-95E296C0DE21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{022DE28B-06C9-46BD-9A63-95E296C0DE21}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
