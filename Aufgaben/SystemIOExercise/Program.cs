@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -31,6 +32,10 @@ namespace SystemIOExercise
             {
                 Directory.CreateDirectory("C:/Temp");
             }
+
+            DirectoryInfo info = Directory.CreateDirectory("C:/Temp/TestOrdner");
+            info.Attributes = FileAttributes.Hidden | FileAttributes.ReadOnly;
+            info.
 
             if (!File.Exists("C:/Temp/test.txt"))
             {
