@@ -35,7 +35,7 @@ namespace SystemIOExercise
 
             DirectoryInfo info = Directory.CreateDirectory("C:/Temp/TestOrdner");
             info.Attributes = FileAttributes.Hidden | FileAttributes.ReadOnly;
-            info.
+            Directory.SetCreationTime("C:/Temp/TestOrdner", new DateTime(2000, 11, 11, 7, 45, 00));
 
             if (!File.Exists("C:/Temp/test.txt"))
             {
@@ -51,6 +51,21 @@ namespace SystemIOExercise
 
             #endregion
 
+            #region File System Watcher
+
+            FileSystemWatcher watcher = new FileSystemWatcher("C:/Temp/TestOrdner");
+            watcher.EnableRaisingEvents = true;
+            watcher.IncludeSubdirectories = true;
+            watcher.Changed += Watcher_Changed;
+            watcher.Created += Watcher_Changed;
+            watcher.NotifyFilter = NotifyFilters.FileName | NotifyFilters.Size;
+            #endregion
+
+        }
+
+        private static void Watcher_Changed(object sender, FileSystemEventArgs e)
+        {
+            Console.WriteLine(e.FullPath);
         }
     }
 }

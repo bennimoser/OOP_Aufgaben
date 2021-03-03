@@ -25,7 +25,6 @@ namespace Linq_Exercise
             // Result: Sarah Huber.
             Console.WriteLine(people.Head());
 
-
             // "Tail" yields all elements except the first.
             // Result: Christine Muserfrau, Rainer Zufall, Max Meier, Kristina Auer
             people.Tail().MyPrint();
@@ -64,6 +63,9 @@ namespace Linq_Exercise
             {
                 Console.WriteLine($"{pickElement}       {string.Join(",", pickResult)}");
             }
+
+
+            Extensionclass<string>.SomeMethod("hallo");
 
             Console.ReadLine();
         }

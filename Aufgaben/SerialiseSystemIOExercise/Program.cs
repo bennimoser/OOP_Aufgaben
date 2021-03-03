@@ -16,7 +16,7 @@ namespace SerialiseSystemIOExercise
         {
 
             #region XML Serializing
-            Person person1 = new Person() { Firstname = "Benjamin", Lastname = "Moser", Birthday = new BirthDate() { Month = 11, Day = 11, Year = 2000 }, _sex = "Tomate" };
+            Person person1 = new Person() { Firstname = "Benjamin", Lastname = "Moser", Birthday = DateTime.Now, _sex = "Tomate" };
             Console.WriteLine("Before Serialize");
             person1.WriteInformation();
             
@@ -48,6 +48,25 @@ namespace SerialiseSystemIOExercise
             var binaryPerson = (Person)formatter.Deserialize(stream);
 
             #endregion
+
+            #region With Surrogate
+
+            using (FileStream fs = new FileStream("data.dat", FileMode.Create, FileAccess.ReadWrite, FileShare.Read))
+            {
+                SurrogateSelector ss = new SurrogateSelector();
+                ss.AddSurrogate(typeof(Person), new StreamingContext(StreamingContextStates.All), new PersonSurrogate());
+
+                IFormatter binaryformatter = new BinaryFormatter();
+                binaryformatter.SurrogateSelector = ss;
+
+                binaryformatter.Serialize(fs, person1);
+
+                fs.Seek(0, SeekOrigin.Begin);
+                Person person2 = (Person)binaryformatter.Deserialize(fs);
+
+                fs.Close();
+            }
+            #endregion
         }
     }
 
@@ -58,7 +77,7 @@ namespace SerialiseSystemIOExercise
 
         public string Lastname { get; set; }
 
-        public BirthDate Birthday { get; set; }
+        public DateTime Birthday { get; set; }
 
         [XmlIgnore]
         [NonSerialized]
@@ -71,36 +90,77 @@ namespace SerialiseSystemIOExercise
             Console.WriteLine("Lastname : " + Lastname);
             Console.WriteLine("Day of Birth: {0}.{1}.{2}", Birthday.Day, Birthday.Month, Birthday.Year);
         }
-    }
 
-    [Serializable]
-    public class BirthDate
-    {
-        public int Day { get; set; }
 
-        public int Month { get; set; }
+        //Gehören in die serialisierte Klasse
+        [OnSerializing()]
+        internal void OnSerializing(StreamingContext context)
+        {
+            Console.WriteLine("Now it will be serialized!");
+        }
 
-        public int Year { get; set; }
+        [OnSerialized()]
+        internal void OnSerialized(StreamingContext context)
+        {
+            Console.WriteLine("Now it has been serialized");
+        }
+
+        [OnDeserializing()]
+        internal void OnDeserializing(StreamingContext context)
+        {
+            Console.WriteLine("It will now be deserialized");
+        }
+
+        [OnDeserialized()]
+        internal void OnDeserialized(StreamingContext context)
+        {
+            Console.WriteLine("Now it has been deserialized");
+        }
     }
 
     public class MyFormatter : IFormatter
     {
-        public ISurrogateSelector SurrogateSelector { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public SerializationBinder Binder { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public StreamingContext Context { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public MyFormatter()
+        {
+            this.Context = new StreamingContext(StreamingContextStates.All);
+        }
+
+        public ISurrogateSelector SurrogateSelector { get; set; }
+        public SerializationBinder Binder { get; set; }
+        public StreamingContext Context { get; set; }
 
         public object Deserialize(Stream serializationStream)
         {
-            Console.WriteLine("Formatter is now Deserializing");
+            Console.WriteLine("Message from Formatter : Formatter is now Deserializing");
             BinaryFormatter formatter = new BinaryFormatter();
             return formatter.Deserialize(serializationStream);
         }
 
         public void Serialize(Stream serializationStream, object graph)
         {
-            Console.WriteLine("Formatter is now Serializing");
+            Console.WriteLine("Message from Formatter : Formatter is now Serializing");
             BinaryFormatter formatter = new BinaryFormatter();
             formatter.Serialize(serializationStream, graph);
+        }
+    }
+
+    public class PersonSurrogate : ISerializationSurrogate
+    {
+        public void GetObjectData(object obj, SerializationInfo info, StreamingContext context)
+        {
+            Person person = (Person)obj;
+            info.AddValue("Firstname", person.Firstname);
+            info.AddValue("Lastname", person.Lastname);
+            info.AddValue("Birthday", person.Birthday);
+        }
+
+        public object SetObjectData(object obj, SerializationInfo info, StreamingContext context, ISurrogateSelector selector)
+        {
+            Person person = (Person)obj;
+            person.Firstname = info.GetString("Firstname");
+            person.Lastname = info.GetString("Lastname");
+            person.Birthday = info.GetDateTime("Birthday");
+            return person;
         }
     }
 }
