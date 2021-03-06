@@ -92,7 +92,7 @@ namespace Server
                     string message = "Thank you for your kind message! Hi from the Server";
                     writer.WriteLine(message);
                 }
-                catch(Exception e)
+                catch(Exception)
                 {
                     Console.WriteLine("An error has occured on Client Nr. " + Id);
                     Thread.Abort();

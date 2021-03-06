@@ -63,7 +63,6 @@ namespace SerialiseSystemIOExercise
 
                 fs.Seek(0, SeekOrigin.Begin);
                 Person person2 = (Person)binaryformatter.Deserialize(fs);
-
                 fs.Close();
             }
             #endregion

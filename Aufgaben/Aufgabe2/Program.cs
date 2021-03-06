@@ -12,7 +12,7 @@ namespace Aufgabe2
         static void Main(string[] args)
         {
             //Erstellung der Assembly
-            AppDomain domain = AppDomain.CurrentDomain;
+            AppDomain domain = AppDomain.CurrentDomain.de;
             AssemblyName asmName = new AssemblyName("MyDynamicAssembly") { Version = new Version("1.0.0.0") };
             AssemblyBuilder asmBuilder = domain.DefineDynamicAssembly(asmName, AssemblyBuilderAccess.Save);
             ModuleBuilder moduleBuilder = asmBuilder.DefineDynamicModule("MyDynamicAssembly", "MyDynamicAssembly.dll");
@@ -21,6 +21,10 @@ namespace Aufgabe2
             ILGenerator gen = methodBuilder.GetILGenerator();
 
             //Code hinter der erstellten Methode
+            gen.Emit(OpCodes.Ldarg_1);
+            gen.Emit(OpCodes.Ldarg_2);
+            gen.Emit(OpCodes.Add);
+            gen.Emit(OpCodes.Call, typeof(Console).GetMethod("WriteLine", new Type[] { typeof(int) }));
             gen.Emit(OpCodes.Ldarg_1);
             gen.Emit(OpCodes.Ldarg_2);
             gen.Emit(OpCodes.Add);

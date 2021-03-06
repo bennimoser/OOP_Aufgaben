@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +12,7 @@ namespace SystemIOExercise
     public class Program
     {
         public static void Main(string[] args)
-        {
+        {            
             #region DriveInformation
 
             DriveInfo[] driveinfos = DriveInfo.GetDrives();
@@ -61,11 +62,53 @@ namespace SystemIOExercise
             watcher.NotifyFilter = NotifyFilters.FileName | NotifyFilters.Size;
             #endregion
 
+            #region MessageType
+            MessageType1 messageType = new MessageType1();
+            messageType.Id = 1;
+            messageType.message = "Hallo";
+            FileStream stream = new FileStream("iwas.txt", FileMode.OpenOrCreate);
+            BinaryFormatter formatter = new BinaryFormatter();
+            formatter.Serialize(stream, messageType);
+            stream.Close();
+
+            stream = new FileStream("iwas.txt", FileMode.OpenOrCreate, FileAccess.Read);
+            var irgendeinobject = (IMessageType)formatter.Deserialize(stream);
+            #endregion
+
         }
 
         private static void Watcher_Changed(object sender, FileSystemEventArgs e)
         {
             Console.WriteLine(e.FullPath);
         }
+    }
+
+    public interface IMessageType
+    {
+        string message { get; set; }
+        
+        int Id { get; set; }
+
+    }
+
+    [Serializable]
+    public class MessageType1 : IMessageType
+    {
+        public string message { get; set; }
+        public int Id { get; set; }
+
+        public void SomeMethod()
+        {
+
+        }
+    }
+
+    [Serializable]
+    public class MessageType2 : IMessageType
+    {
+        public string message { get; set; }
+        public int Id { get; set; }
+
+        public int Zahl { get; set; }
     }
 }
