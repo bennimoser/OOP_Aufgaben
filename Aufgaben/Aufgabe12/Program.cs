@@ -16,14 +16,16 @@ namespace Aufgabe12
             TcpClient client = new TcpClient();
             
             IPAddress address = Dns.GetHostEntry("www.httpvshttps.com").AddressList.Where(ipa => ipa.AddressFamily == AddressFamily.InterNetwork).FirstOrDefault() ;
-
             client.Connect(address, 80);
 
-            string header = "GET http://localhost:2006/1.aspx HTTP/1.1\r\n" +
-                "Host: Benjamin Moser\r\n" +
-                "Connection: keep-alive\r\n" +
-                "User-Agent: Mozilla/5.0\r\n" +
-                "\r\n";
+
+            //string header = "GET http://localhost:2006/1.aspx HTTP/1.1\r\n" +
+            //    "Host: Benjamin Moser\r\n" +
+            //    "Connection: keep-alive\r\n" +
+            //    "User-Agent: Mozilla/5.0\r\n" +
+            //    "\r\n";
+
+            string header = "GET / HTTP/1.0\r\n\r\n";
 
             client.Client.Send(Encoding.UTF8.GetBytes(header));
 
