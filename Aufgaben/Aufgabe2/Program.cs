@@ -12,7 +12,7 @@ namespace Aufgabe2
         static void Main(string[] args)
         {
             //Erstellung der Assembly
-            AppDomain domain = AppDomain.CurrentDomain.de;
+            AppDomain domain = AppDomain.CurrentDomain;
             AssemblyName asmName = new AssemblyName("MyDynamicAssembly") { Version = new Version("1.0.0.0") };
             AssemblyBuilder asmBuilder = domain.DefineDynamicAssembly(asmName, AssemblyBuilderAccess.Save);
             ModuleBuilder moduleBuilder = asmBuilder.DefineDynamicModule("MyDynamicAssembly", "MyDynamicAssembly.dll");
