@@ -32,6 +32,15 @@ Lade die Assembly System.dll und gib alle Typen aus, die das Interface IList imp
 ## Aufgabe 11 (erledigt)
 Prozesse:
 Kapseln Sie einen Konsolenprozess über eine grafisches User-Interface.
+## Aufgabe 12 (erledigt)
+Netzwerkprogrammierung:
+Verbinden Sie sich zu http://www.httpvshttps.com/ und geben Sie deren Inhalt in der Konsole aus.
+## Aufgabe 13 (erledigt)
+LINQ:
+Extension Methode "FilterType<T>", die alle Objekte des Typs T aus einer Ansammlung von Objekten extrahiert.
+## Aufgabe 14 (erledigt)
+Assembly:
+Lade eine Assembly und gib alle Interfaces an der Konsole aus. Im Falle von Verschachtelungen sind diese entsprechend grafisch korrekt darzustellen.
 ## WPF Uhr mit Animationen aus dem Beispielvideo (erledigt)
 ## Personenmanager (erledigt)
 ## Linq Übung (5-8 missing)
